@@ -24,8 +24,11 @@ cmd = [
     "--name", "Cortex",
     "--icon", ICON_PATH,
     "--clean",
+    "--windowed",
     "--noconfirm",
+    "main.py" 
 ]
+
 
 for module in hidden_imports:
     cmd += ["--hidden-import", module]
