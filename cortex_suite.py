@@ -1,5 +1,6 @@
 import sys, psutil, platform, subprocess, socket, datetime, threading, time, requests, json, os
 from PyQt6 import QtWidgets, QtGui, QtCore
+from PyQt6.QtWidgets import QSizeGrip
 from collections import namedtuple
 
 try:
@@ -867,7 +868,12 @@ class CortexSuite(QtWidgets.QMainWindow):
         self.tabs = QtWidgets.QTabWidget()
         self.tabs.setUsesScrollButtons(False)
         self.main_layout.addWidget(self.tabs)
-        
+        self.size_grip = QtWidgets.QSizeGrip(self)
+        self.main_layout.addWidget(
+            self.size_grip,
+            alignment=QtCore.Qt.AlignmentFlag.AlignBottom | QtCore.Qt.AlignmentFlag.AlignRight
+        )
+
         self.home_tab()
         self.system_tab()
         self.processes_tab() 
