@@ -26,13 +26,12 @@ cmd = [
     "--clean",
     "--windowed",
     "--noconfirm",
-    "main.py" 
 ]
-
 
 for module in hidden_imports:
     cmd += ["--hidden-import", module]
 
+# ✅ ONE script, LAST argument
 cmd.append(SCRIPT_PATH)
 
 subprocess.run(cmd, check=True)
